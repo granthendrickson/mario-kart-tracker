@@ -1,0 +1,65 @@
+.tracks {
+  background-image: linear-gradient(45deg, #E3E3E3 25%, transparent 25%), linear-gradient(-45deg, #E3E3E3 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #E3E3E3 75%), linear-gradient(-45deg, transparent 75%, #E3E3E3 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+
+  height: 8000px;
+  position: relative;
+}
+
+.banner-down {
+  position: absolute;
+  left: 0px;
+  top: -235px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner-pic-down {
+  position: absolute;
+  left: -80px;
+  top: -300px;
+  width: 635px;
+  z-index: 10;
+}
+
+.section-header {
+  background: -webkit-linear-gradient(white, #b4b4b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Mario Kart F2";
+  font-size: 4rem;
+  -webkit-text-stroke: 4px black;
+
+  padding-top: 420px;
+}
+
+.all-tracks-container {
+  margin: 40px 10%;
+}
+
+.cup {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cup-pic { 
+  width: 183px;
+}
+
+.cup-name {
+  font: "Roboto";
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-top: -2px;
+}
+
+.track-container {
+  flex: 1;
+}
+
+.track-pic {
+  width: 300px;
+}

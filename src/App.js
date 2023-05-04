@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Title from './components/Title';
 import Records from './components/Records';
 import Points from './components/Points';
+import Tracks from './components/Tracks';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Title />
       <Records />
       <Points />
+      <Tracks />
     </div>
   );
 }
