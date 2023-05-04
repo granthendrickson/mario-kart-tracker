@@ -1,0 +1,30 @@
+.navbar {
+  background-color: #E60012;
+
+  height: 110px;
+  width: 100%;
+  display: flex;
+}
+
+.clock-container {
+  margin: 10px 30px;
+}
+
+#clock-img {
+  width: 70px;
+  transform: rotate(-28deg);
+}
+
+.nav-menu {
+  color: white;
+  font: 'Roboto';
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  list-style: none;
+}
+
+.nav-item {
+  display: inline;
+  margin-right: 100px;
+}

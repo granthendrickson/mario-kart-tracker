@@ -1,0 +1,21 @@
+.title {
+  background-image: url('../images/mk8banner.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+  height: 1200px;
+}
+
+.title-container {
+  background: -webkit-linear-gradient(white, #b4b4b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Mario Kart F2";
+  font-size: 4rem;
+  -webkit-text-stroke: 4px black;
+
+  position: absolute;
+  left: 10%;
+  top: 680px;
+}
