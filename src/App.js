@@ -6,6 +6,7 @@ import Title from './components/Title';
 import Records from './components/Records';
 import Points from './components/Points';
 import Tracks from './components/Tracks';
+import AddTime from './components/AddTime';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Records />
       <Points />
       <Tracks />
+      <AddTime />
     </div>
   );
 }

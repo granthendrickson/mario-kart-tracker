@@ -1,0 +1,68 @@
+.add-time {
+  background-image: url('../images/darkTiles.png');
+  background-repeat: repeat;
+
+  height: 2000px;
+  position: relative;
+}
+
+.add-time-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-time-form {
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 80px;
+  width: 1000px;
+  height: 550px;
+  border-radius: 40px;
+  box-shadow: 6px 6px 10px black;
+
+}
+
+.add-time-form-top {
+  display: flex;
+  position: relative;
+  margin-top: 100px;
+  width: 90%;
+}
+
+.add-time-form-top-left {
+  width: 50%;
+}
+
+.add-time-form-top-right {
+  width: 50%;
+}
+
+label {
+  display: block;
+
+  text-align: left;
+  color: #E60012;
+  font: 'Roboto';
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+input[type = text] {
+  display: block;
+  width: 80%;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 3em;
+  padding-left: 20px;
+
+  font: 'Roboto';
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+

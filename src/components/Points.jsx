@@ -15,7 +15,7 @@ import linkIcon from '../images/link_th.png';
 
 export default function Points() {
   return (
-    <div className='records'>
+    <div className='points'>
       <div className='divider-down'>
         <img
           className='banner-pic-up'
