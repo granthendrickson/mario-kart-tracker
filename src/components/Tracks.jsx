@@ -124,16 +124,16 @@ export default function Tracks() {
         <Cup
           cupPic={flowerCupIcon}
           cupName={'Flower Cup'}
-          track1Pic={sunShineAirport}
-          track2Pic={dolphinShoals}
+          track1Pic={marioCircuit}
+          track2Pic={toadHarbor}
           track3Pic={twistedMansion}
           track4Pic={shyGuyFalls}
         />
         <Cup
           cupPic={starCupIcon}
           cupName={'Star Cup'}
-          track1Pic={marioCircuit}
-          track2Pic={toadHarbor}
+          track1Pic={sunShineAirport}
+          track2Pic={dolphinShoals}
           track3Pic={electrodome}
           track4Pic={mountWario}
         />

@@ -39,6 +39,14 @@
   width: 50%;
 }
 
+#add-time-track {
+  width: 90% !important;
+}
+
+#add-time-character {
+  width: 90% !important;
+}
+
 .add-time-form-bottom {
   display: flex;
   margin: auto;
@@ -98,6 +106,8 @@
   font-style: italic;
   font-size: 3rem;
   color: white;
+
+  cursor: pointer;
 }
 
 label {
@@ -125,3 +135,16 @@ input[type = text] {
   font-style: italic;
 }
 
+input[type = password] {
+  display: block;
+  width: 80%;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 3em;
+  padding-left: 20px;
+
+  font: 'Roboto';
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}

@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 // Firebase
 import { auth, db } from '../firebase.js';
-import { doc, getDoc, onSnapshot } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 
 // Styles
 import '../styles/login.css';
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from 'firebase/auth';
 
 export default function Login() {
   const initialValues = {
@@ -39,6 +43,7 @@ export default function Login() {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
         setAuthUser(user);
+        getUserData(user.uid);
       } else {
         setAuthUser(null);
       }
@@ -49,10 +54,23 @@ export default function Login() {
     };
   }, []);
 
-  const docRef = doc(db, 'users', 'vefhGPlCY5YlWihnMIhsSyTmAAF3');
-  getDoc(docRef).then((doc) => {
-    console.log(doc.data(), doc.id);
-  });
+  // Get the logged in user's data
+  const [user, setUser] = useState('');
+  const getUserData = (userId) => {
+    const docRef = doc(db, 'users', userId);
+    onSnapshot(docRef, (doc) => {
+      setUser(doc.data());
+    });
+  };
+
+  // Sign out the current user
+  const userSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log('Sign out successful');
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className='login'>
@@ -65,7 +83,15 @@ export default function Login() {
       <div className='login-form-container'>
         <div className='login-form'>
           {authUser ? (
-            <div>{`Signed in as ${authUser.uid}`}</div>
+            <div className='signed-in'>
+              <div className='signed-in-message'>{`Signed in as ${user.displayName}`}</div>
+              <button
+                id='sign-out-button'
+                onClick={userSignOut}
+              >
+                Sign Out
+              </button>
+            </div>
           ) : (
             <>
               <label htmlFor='email'>Email</label>
@@ -83,7 +109,7 @@ export default function Login() {
                 Password
               </label>
               <input
-                type='text'
+                type='password'
                 name='password'
                 id='user-password'
                 value={formValues.password}

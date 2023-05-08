@@ -49,3 +49,31 @@
   color: white;
   cursor: pointer;
 }
+
+.signed-in {
+  display: block;
+}
+
+.signed-in-message {
+  font: 'Roboto';
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+#sign-out-button {
+  background-color: #E60012;
+
+  width: 260px;
+  height: 80px;
+  margin-top: 40px;
+  border-radius: 20px;
+
+  text-align: center;
+  font: 'Roboto';
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
