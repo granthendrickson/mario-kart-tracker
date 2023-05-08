@@ -19,10 +19,6 @@ export default function Podium(props) {
     setPlaceIcon(icon);
   }, [place]);
 
-  useEffect(() => {
-    console.log(placeIcon);
-  }, [placeIcon]);
-
   return (
     <div className='podium'>
       <h1 className='podium-name'>{name}</h1>

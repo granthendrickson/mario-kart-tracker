@@ -1,9 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { auth } from '../firebase.js';
 
 // Styles
 import '../styles/login.css';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
 export default function Login() {
+  const initialValues = {
+    email: '',
+    password: '',
+  };
+
+  const [formValues, setFormValues] = useState(initialValues);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+    // console.log(formValues);
+  };
+
+  const handleLogin = () => {
+    console.log('login attempt!');
+    signInWithEmailAndPassword(
+      auth,
+      formValues.email,
+      formValues.password
+    ).catch((error) => {
+      console.log(error);
+    });
+  };
+
+  // Check if a user is logged in
+  const [authUser, setAuthUser] = useState('');
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+
+    return () => {
+      listen();
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(authUser.uid);
+  }, [authUser]);
+
   return (
     <div className='login'>
       <div
@@ -14,24 +60,39 @@ export default function Login() {
       </div>
       <div className='login-form-container'>
         <div className='login-form'>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='text'
-            name='email'
-            id='user-email'
-          />
-          <label
-            htmlFor='password'
-            id='user-password-header'
-          >
-            Password
-          </label>
-          <input
-            type='text'
-            name='password'
-            id='user-password'
-          />
-          <button id='login-button'>Login</button>
+          {authUser ? (
+            <div>{`Signed in as ${authUser.uid}`}</div>
+          ) : (
+            <>
+              <label htmlFor='email'>Email</label>
+              <input
+                type='text'
+                name='email'
+                id='user-email'
+                value={formValues.email}
+                onChange={handleChange}
+              />
+              <label
+                htmlFor='password'
+                id='user-password-header'
+              >
+                Password
+              </label>
+              <input
+                type='text'
+                name='password'
+                id='user-password'
+                value={formValues.password}
+                onChange={handleChange}
+              />
+              <button
+                id='login-button'
+                onClick={handleLogin}
+              >
+                Login
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
