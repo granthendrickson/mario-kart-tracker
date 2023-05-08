@@ -1,0 +1,50 @@
+.login {
+  background-image: url('../images/darkTiles.png');
+  background-repeat: repeat;
+
+  height: 1000px;
+  position: relative;
+}
+
+#login-header {
+  padding-top: 0px !important;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  background-color: white;
+
+  width: 600px;
+  height: 400px;
+  border-radius: 40px;
+  box-shadow: 6px 6px 10px black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-password-header {
+  margin-top: 40px;
+}
+
+#login-button {
+  background-color: #E60012;
+
+  width: 260px;
+  height: 80px;
+  margin-top: 40px;
+  border-radius: 20px;
+
+  text-align: center;
+  font: 'Roboto';
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3rem;
+  color: white;
+}

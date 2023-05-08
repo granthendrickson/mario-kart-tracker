@@ -7,6 +7,7 @@ import Records from './components/Records';
 import Points from './components/Points';
 import Tracks from './components/Tracks';
 import AddTime from './components/AddTime';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Points />
       <Tracks />
       <AddTime />
+      <Login />
     </div>
   );
 }

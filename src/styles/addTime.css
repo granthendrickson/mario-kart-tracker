@@ -2,7 +2,7 @@
   background-image: url('../images/darkTiles.png');
   background-repeat: repeat;
 
-  height: 2000px;
+  height: 1500px;
   position: relative;
 }
 
@@ -15,8 +15,6 @@
 .add-time-form {
   background-color: white;
 
-  display: flex;
-  justify-content: center;
 
   margin-top: 80px;
   width: 1000px;
@@ -29,7 +27,7 @@
 .add-time-form-top {
   display: flex;
   position: relative;
-  margin-top: 100px;
+  margin: 80px auto;
   width: 90%;
 }
 
@@ -39,6 +37,67 @@
 
 .add-time-form-top-right {
   width: 50%;
+}
+
+.add-time-form-bottom {
+  display: flex;
+  margin: auto;
+  width: 90%;
+}
+
+.time-input {
+  border: 0 !important;
+  border-bottom: 2px solid black !important;
+  border-radius: 0 !important;
+
+  height: 200px !important;
+
+  font-size: 10rem !important;
+  text-align: center;
+}
+
+#time-input-minutes {
+  width: 120px !important;
+}
+
+#time-input-seconds {
+  width: 182px !important;
+  margin-top: 38px;
+}
+
+#time-input-milliseconds {
+  width: 270px !important;
+  margin-top: 38px;
+}
+
+#time-colon {
+  font-size: 10rem;
+
+  margin-top: 30px;
+}
+
+#time-period {
+  font-size: 10rem;
+
+  margin-top: 60px;
+}
+
+#add-time-button {
+  background-color: #E60012;
+
+  margin-top: 100px;
+  margin-left: 40px;
+  width: 180px;
+  height: 140px;
+  border-radius: 20px;
+  border: none;
+
+  text-align: center;
+  font: 'Roboto';
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3rem;
+  color: white;
 }
 
 label {
