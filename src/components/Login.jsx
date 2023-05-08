@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { auth } from '../firebase.js';
+
+// Firebase
+import { auth, db } from '../firebase.js';
+import { doc, getDoc, onSnapshot } from 'firebase/firestore';
 
 // Styles
 import '../styles/login.css';
@@ -46,9 +49,10 @@ export default function Login() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(authUser.uid);
-  }, [authUser]);
+  const docRef = doc(db, 'users', 'vefhGPlCY5YlWihnMIhsSyTmAAF3');
+  getDoc(docRef).then((doc) => {
+    console.log(doc.data(), doc.id);
+  });
 
   return (
     <div className='login'>
