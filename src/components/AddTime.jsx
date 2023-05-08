@@ -213,6 +213,7 @@ export default function AddTime() {
             setDoc(trackTimeRef, {
               character: addTimeForm.character.value,
               time: time,
+              recordHolder: user.displayName,
             }).then(() => {
               addTimeForm.reset();
             });
