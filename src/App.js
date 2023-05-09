@@ -1,25 +1,27 @@
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-// Components
-import Navbar from './components/Navbar';
-import Title from './components/Title';
-import Records from './components/Records';
-import Points from './components/Points';
-import Tracks from './components/Tracks';
-import AddTime from './components/AddTime';
-import Login from './components/Login';
+// Pages
+import TrackSummary from './pages/TrackSummary';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className='App'>
-      <Navbar />
-      <Title />
-      <Records />
-      <Points />
-      <Tracks />
-      <AddTime />
-      <Login />
-    </div>
+    <Router>
+      <div className='App'>
+        <Routes>
+          <Route
+            exact
+            path='/'
+            element={<Home />}
+          />
+          <Route
+            path='pages/TrackSummary.jsx'
+            element={<TrackSummary />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

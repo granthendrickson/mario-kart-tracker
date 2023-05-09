@@ -70,7 +70,7 @@ import rainbowRoadN64 from '../images/track-images/lightning-cup/MK8_N64_Rainbow
 import eggCupIcon from '../images/cup-icons/MK8_Egg_Cup_Emblem.webp';
 import yoshiCircuit from '../images/track-images/egg-cup/MK8_GCN_Yoshi_Circuit_Course_Icon.png';
 import exciteikeArena from '../images/track-images/egg-cup/MK8_Excitebike_Arena_Course_Icon.webp';
-import dragonDriftwat from '../images/track-images/egg-cup/MK8_Dragon_Driftway_Course_Icon.png';
+import dragonDriftway from '../images/track-images/egg-cup/MK8_Dragon_Driftway_Course_Icon.png';
 import muteCity from '../images/track-images/egg-cup/MK8_Mute_City_Course_Icon.png';
 
 // Triforce Cup
@@ -120,6 +120,10 @@ export default function Tracks() {
           track2Pic={waterPark}
           track3Pic={sweetSweetCanyon}
           track4Pic={thwompRuins}
+          track1Name={'mario-kart-stadium'}
+          track2Name={'water-park'}
+          track3Name={'sweet-sweet-canyon'}
+          track4Name={'thwomp-ruins'}
         />
         <Cup
           cupPic={flowerCupIcon}
@@ -128,6 +132,10 @@ export default function Tracks() {
           track2Pic={toadHarbor}
           track3Pic={twistedMansion}
           track4Pic={shyGuyFalls}
+          track1Name={'mario-circuit'}
+          track2Name={'toad-harbor'}
+          track3Name={'twisted-mansion'}
+          track4Name={'shy-guy-falls'}
         />
         <Cup
           cupPic={starCupIcon}
@@ -136,6 +144,10 @@ export default function Tracks() {
           track2Pic={dolphinShoals}
           track3Pic={electrodome}
           track4Pic={mountWario}
+          track1Name={'sunshine-airport'}
+          track2Name={'dolphin-shoals'}
+          track3Name={'electrodrome'}
+          track4Name={'mount-wario'}
         />
         <Cup
           cupPic={specialCupIcon}
@@ -144,6 +156,10 @@ export default function Tracks() {
           track2Pic={boneDryDunes}
           track3Pic={bowsersCastle}
           track4Pic={rainbowRoad}
+          track1Name={'cloudtop-cruise'}
+          track2Name={'bone-dry-dunes'}
+          track3Name={'bowsers-castle'}
+          track4Name={'rainbow-road'}
         />
         <Cup
           cupPic={shellCupIcon}
@@ -152,6 +168,10 @@ export default function Tracks() {
           track2Pic={marioCircuitGBA}
           track3Pic={cheepCheepBeach}
           track4Pic={toadsTurnpike}
+          track1Name={'Wii-moo-moo-meadows'}
+          track2Name={'GBA-mario-circuit'}
+          track3Name={'DS-cheep-cheep-beach'}
+          track4Name={'N64-toads-turnpike'}
         />
         <Cup
           cupPic={bananaCupIcon}
@@ -160,6 +180,10 @@ export default function Tracks() {
           track2Pic={donutPlains3}
           track3Pic={royalRaceway}
           track4Pic={dkJungle}
+          track1Name={'GCN-dry-dry-desert'}
+          track2Name={'SNES-donut-plains-3'}
+          track3Name={'N64-royal-raceway'}
+          track4Name={'3DS-dk-jungle'}
         />
         <Cup
           cupPic={leafCupIcon}
@@ -168,6 +192,10 @@ export default function Tracks() {
           track2Pic={sherbetLand}
           track3Pic={musicPark}
           track4Pic={yoshiValley}
+          track1Name={'DS-wario-stadium'}
+          track2Name={'GCN-sherbet-land'}
+          track3Name={'3DS-music-park'}
+          track4Name={'N64-yoshi-valley'}
         />
         <Cup
           cupPic={lightningCupIcon}
@@ -176,14 +204,22 @@ export default function Tracks() {
           track2Pic={piranhaPlantSlide}
           track3Pic={grumbleVolcano}
           track4Pic={rainbowRoadN64}
+          track1Name={'DS-tick-tock-clock'}
+          track2Name={'3DS-piranha-plant-slide'}
+          track3Name={'Wii-grumble-volcano'}
+          track4Name={'N64-rainbow-road'}
         />
         <Cup
           cupPic={eggCupIcon}
           cupName={'Egg Cup'}
           track1Pic={yoshiCircuit}
           track2Pic={exciteikeArena}
-          track3Pic={dragonDriftwat}
+          track3Pic={dragonDriftway}
           track4Pic={muteCity}
+          track1Name={'GCN-yoshis-circuit'}
+          track2Name={'excitebike-arena'}
+          track3Name={'dragon-driftway'}
+          track4Name={'mute-city'}
         />
         <Cup
           cupPic={triforceCup}
@@ -192,6 +228,10 @@ export default function Tracks() {
           track2Pic={rainbowRoadSNES}
           track3Pic={iceIceOutpost}
           track4Pic={hyruleCircuit}
+          track1Name={'Wii-warios-gold-mine'}
+          track2Name={'SNES-rainbow-road'}
+          track3Name={'ice-ice-outpost'}
+          track4Name={'hyrule-circuit'}
         />
         <Cup
           cupPic={crossingCupIcon}
@@ -200,6 +240,10 @@ export default function Tracks() {
           track2Pic={cheeseLand}
           track3Pic={wildWoods}
           track4Pic={animalCrossing}
+          track1Name={'GCN-baby-park'}
+          track2Name={'GBA-cheese-land'}
+          track3Name={'wild-woods'}
+          track4Name={'animal-crossing'}
         />
         <Cup
           cupPic={bellCupIcon}
@@ -208,6 +252,10 @@ export default function Tracks() {
           track2Pic={ribbonRoad}
           track3Pic={superBellSubway}
           track4Pic={bigBlue}
+          track1Name={'3DS-neo-bowser-city'}
+          track2Name={'GBA-ribbon-road'}
+          track3Name={'super-bell-subway'}
+          track4Name={'big-blue'}
         />
       </div>
     </div>

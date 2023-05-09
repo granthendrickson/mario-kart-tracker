@@ -75,7 +75,7 @@ export default function AddTime() {
     { value: 'bone-dry-dunes', label: 'Bone Dry Dunes' },
     { value: 'bowsers-castle', label: "Bowser's Castle" },
     { value: 'rainbow-road', label: 'Rainbow Road' },
-    { value: 'wii-moo-moo-meadows', label: 'Wii Moo Moo Meadows' },
+    { value: 'Wii-moo-moo-meadows', label: 'Wii Moo Moo Meadows' },
     { value: 'GBA-mario-circuit', label: 'GBA Mario Circuit' },
     { value: 'DS-cheep-cheep-beach', label: 'DS Cheep Cheep Beach' },
     { value: 'N64-toads-turnpike', label: "N64 Toad's Turnpike" },
@@ -184,7 +184,8 @@ export default function AddTime() {
           addTimeForm.character.value &&
           addTimeForm.minutes.value &&
           addTimeForm.seconds.value &&
-          addTimeForm.milliseconds.value
+          addTimeForm.milliseconds.value &&
+          user.displayName
         ) {
           // Get reference to add the time to the user
           const userTimeCollectionUrl = 'users/' + authUser.uid + '/times';
@@ -245,66 +246,70 @@ export default function AddTime() {
       </div>
       <div className='section-header'>Add Time</div>
       <div className='add-time-form-container'>
-        <form className='add-time-form'>
-          <div className='add-time-form-top'>
-            <div className='add-time-form-top-left'>
-              <label htmlFor='track'>Track</label>
-              <Select
-                options={tracks}
-                name='track'
-                id='add-time-track'
-              />
-            </div>
+        {authUser ? (
+          <form className='add-time-form'>
+            <div className='add-time-form-top'>
+              <div className='add-time-form-top-left'>
+                <label htmlFor='track'>Track</label>
+                <Select
+                  options={tracks}
+                  name='track'
+                  id='add-time-track'
+                />
+              </div>
 
-            <div className='add-time-form-top-right'>
-              <label htmlFor='character'>Character</label>
-              <Select
-                options={characters}
-                name='character'
-                id='add-time-character'
-              />
+              <div className='add-time-form-top-right'>
+                <label htmlFor='character'>Character</label>
+                <Select
+                  options={characters}
+                  name='character'
+                  id='add-time-character'
+                />
+              </div>
             </div>
-          </div>
-          <div className='add-time-form-bottom'>
-            <div className='add-time-form-bottom-third'>
-              <label htmlFor='minutes'>Time</label>
+            <div className='add-time-form-bottom'>
+              <div className='add-time-form-bottom-third'>
+                <label htmlFor='minutes'>Time</label>
+                <input
+                  type='text'
+                  className='time-input'
+                  name='minutes'
+                  id='time-input-minutes'
+                  onInput={handleMinutesInput}
+                  ref={minutesRef}
+                />
+              </div>
+              <span id='time-colon'>:</span>
               <input
                 type='text'
                 className='time-input'
-                name='minutes'
-                id='time-input-minutes'
-                onInput={handleMinutesInput}
-                ref={minutesRef}
+                name='seconds'
+                id='time-input-seconds'
+                onInput={handleSecondsInput}
+                ref={secondsRef}
               />
+              <span id='time-period'>.</span>
+              <input
+                type='text'
+                className='time-input'
+                name='milliseconds'
+                id='time-input-milliseconds'
+                onInput={handleMillisecondsInput}
+                ref={millisecondsRef}
+              />
+              <button
+                id='add-time-button'
+                ref={addTimeButtonRef}
+              >
+                Add
+                <br />
+                Time
+              </button>
             </div>
-            <span id='time-colon'>:</span>
-            <input
-              type='text'
-              className='time-input'
-              name='seconds'
-              id='time-input-seconds'
-              onInput={handleSecondsInput}
-              ref={secondsRef}
-            />
-            <span id='time-period'>.</span>
-            <input
-              type='text'
-              className='time-input'
-              name='milliseconds'
-              id='time-input-milliseconds'
-              onInput={handleMillisecondsInput}
-              ref={millisecondsRef}
-            />
-            <button
-              id='add-time-button'
-              ref={addTimeButtonRef}
-            >
-              Add
-              <br />
-              Time
-            </button>
-          </div>
-        </form>
+          </form>
+        ) : (
+          <div className='add-time-form'>Sign in to add a time</div>
+        )}
       </div>
     </div>
   );

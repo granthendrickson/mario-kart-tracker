@@ -61,4 +61,68 @@
 
 .track-pic {
   width: 300px;
+  cursor: pointer;
+}
+
+.track-summary-page {
+  background-image: url('../images/lightTiles.png');
+  background-repeat: repeat;
+
+  height: 1400px;
+  position: relative;
+
+  padding-top: 100px;
+}
+
+.back-icon {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  font-size: 2rem;
+}
+
+.track-name-header {
+  margin-top: 0px;
+
+  font: 'Roboto';
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.track-summary {
+  background-color: white;
+
+  position: absolute;
+  width: 60%;
+  height: 1000px;
+  left: 20%;
+  right: 20%;
+  z-index: 20;
+
+  border-radius: 40px;
+  box-shadow: 6px 6px 10px black;
+}
+
+.time-tile {
+  background-color: aliceblue;
+
+  display: flex;
+  width: 95%;
+  margin: 10px auto;
+  border-radius: 20px;
+}
+
+.time-tile > p {
+  margin: 10px 30px;
+
+  font: 'Roboto';
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
 }
