@@ -26,7 +26,7 @@
   background: -webkit-linear-gradient(white, #b4b4b4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Mario Kart F2";
+  font-family: "Mario Kart";
   font-size: 4rem;
   -webkit-text-stroke: 4px black;
 
@@ -68,7 +68,8 @@
   background-image: url('../images/lightTiles.png');
   background-repeat: repeat;
 
-  height: 1400px;
+  width: 100vw;
+  height: 100vh;
   position: relative;
 
   padding-top: 100px;
@@ -100,7 +101,7 @@
 
   position: absolute;
   width: 60%;
-  height: 1000px;
+  height: 700px;
   left: 20%;
   right: 20%;
   z-index: 20;
