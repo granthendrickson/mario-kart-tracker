@@ -18,23 +18,6 @@ import rosalinaIcon from '../images/rosalina_th.png';
 import linkIcon from '../images/link_th.png';
 
 export default function Records() {
-  // Get records pseudo code
-  /*
-  
-  For each track:
-    sort times
-
-    add one "record" to whoever is the fastest time
-
-  find the top three record counts
-
-
-  Henny lllllll
-  Reppo l
-  Sepe lllllll
-
-  */
-
   // States to store the display names of the podium
   const [firstPlaceName, setFirstPlaceName] = useState('');
   const [secondPlaceName, setSecondPlaceName] = useState('');
