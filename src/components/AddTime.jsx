@@ -56,6 +56,7 @@ export default function AddTime() {
     { value: 'villager', label: 'Villager' },
     { value: 'isabelle', label: 'Isabelle' },
     { value: 'mii-character', label: 'Mii Character' },
+    { value: 'birdo', label: 'Birdo' },
   ];
 
   const tracks = [
