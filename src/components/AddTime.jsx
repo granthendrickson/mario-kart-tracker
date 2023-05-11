@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Select from 'react-select';
+import { useNavigate } from 'react-router-dom';
 
 // Firebase
 import { auth, db } from '../firebase.js';
@@ -140,6 +141,7 @@ export default function AddTime() {
     }
   }, [user]);
 
+  // Handle automatic focus to next input field in time
   const minutesRef = useRef(null);
   const secondsRef = useRef(null);
   const millisecondsRef = useRef(null);
@@ -170,6 +172,11 @@ export default function AddTime() {
     if (milliseconds.length === 0) {
       secondsRef.current.focus();
     }
+  };
+
+  const navigate = useNavigate();
+  const toTrackPage = (track) => {
+    navigate('/pages/trackSummary.jsx', { state: track });
   };
 
   // Adding a time
@@ -218,7 +225,7 @@ export default function AddTime() {
               recordHolder: user.displayName,
             }).then(() => {
               addTimeForm.reset();
-              alert('Time Added!');
+              toTrackPage(addTimeForm.track.value);
             });
           });
         } else {
