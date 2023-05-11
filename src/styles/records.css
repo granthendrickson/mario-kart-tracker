@@ -58,6 +58,7 @@
 }
 
 .podium-container {
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -113,4 +114,17 @@
 
 .place-icon {
   width: 220px;
+}
+
+.coming-soon-container {
+  background-color: rgb(223, 223, 0);
+  position: absolute;
+  top: 100px;
+  z-index: 20;
+  width: 120%;
+
+  transform: rotate(-10deg);
+
+  font-family: 'Mario Kart';
+  font-size: 3rem;
 }

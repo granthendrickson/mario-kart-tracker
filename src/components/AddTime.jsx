@@ -218,6 +218,7 @@ export default function AddTime() {
               recordHolder: user.displayName,
             }).then(() => {
               addTimeForm.reset();
+              alert('Time Added!');
             });
           });
         } else {

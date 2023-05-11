@@ -32,6 +32,9 @@ export default function Points() {
       </div>
       <div className='section-header'>Most Points</div>
       <div className='podium-container'>
+        <div className='coming-soon-container'>
+          <h1 className='coming-soon'>COMING SOON</h1>
+        </div>
         <Podium
           name={'Grant'}
           stat={'287'}

@@ -1,9 +1,14 @@
 .navbar {
   background-color: #E60012;
+  box-shadow: 0px 5px 10px rgb(97, 97, 97);
+
+  position: sticky;
+  top: 0px;
 
   height: 110px;
   width: 100%;
   display: flex;
+  z-index: 100;
 }
 
 .clock-container {
@@ -27,4 +32,8 @@
 .nav-item {
   display: inline;
   margin-right: 100px;
+}
+
+a {
+  cursor: pointer;
 }

@@ -16,6 +16,7 @@ import yoshiHero from '../images/char-yoshi.webp';
 import kingBooIcon from '../images/kingBoo_th.png';
 import rosalinaIcon from '../images/rosalina_th.png';
 import linkIcon from '../images/link_th.png';
+import yoshiIcon from '../images/yoshi_th.webp';
 
 export default function Records() {
   // States to store the display names of the podium
@@ -129,6 +130,8 @@ export default function Records() {
               ? rosalinaIcon
               : secondPlaceName === 'Reppo'
               ? linkIcon
+              : secondPlaceName === 'Samoto'
+              ? yoshiIcon
               : null
           }
           place={2}
@@ -144,6 +147,8 @@ export default function Records() {
               ? rosalinaIcon
               : firstPlaceName === 'Reppo'
               ? linkIcon
+              : firstPlaceName === 'Samoto'
+              ? yoshiIcon
               : null
           }
           place={1}
@@ -159,6 +164,8 @@ export default function Records() {
               ? rosalinaIcon
               : thirdPlaceName === 'Reppo'
               ? linkIcon
+              : thirdPlaceName === 'Samoto'
+              ? yoshiIcon
               : null
           }
           place={3}
