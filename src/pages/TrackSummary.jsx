@@ -95,7 +95,7 @@ export default function TrackSummary() {
     const getTrackName = (trackId) => {
       const docRef = doc(db, 'tracks', trackId);
       onSnapshot(docRef, (doc) => {
-        setTrackDisplayName(doc.data());
+        setTrackDisplayName(doc.data().displayName);
       });
     };
 
@@ -205,7 +205,7 @@ export default function TrackSummary() {
         />
       </Link>
 
-      <h1 className='track-name-header'>{trackDisplayName.displayName}</h1>
+      <h1 className='track-name-header'>{trackDisplayName}</h1>
       <div className='track-summary'>
         {timeTiles}
         <img
