@@ -137,61 +137,204 @@ export default function TrackSummary() {
       .catch((error) => console.log(error));
   }, [trackName]);
 
-  // Find out which track minimap to use
+  // Find out which track minimap & world record to use
   const [trackMiniMap, setTrackMiniMap] = useState();
+  const [trackWR, setTrackWR] = useState();
   useEffect(() => {
     const trackName = location.state;
 
-    if (trackName === 'mario-kart-stadium')
+    if (trackName === 'mario-kart-stadium') {
       setTrackMiniMap(MK8marioKartStadium);
-    if (trackName === 'water-park') setTrackMiniMap(waterPark);
-    if (trackName === 'sweet-sweet-canyon') setTrackMiniMap(sweetSweetCanyon);
-    if (trackName === 'thwomp-ruins') setTrackMiniMap(thwompRuins);
-    if (trackName === 'mario-circuit') setTrackMiniMap(marioCircuit);
-    if (trackName === 'toad-harbor') setTrackMiniMap(toadHarbor);
-    if (trackName === 'twisted-mansion') setTrackMiniMap(twistedMansion);
-    if (trackName === 'shy-guy-falls') setTrackMiniMap(shyGuyFalls);
-    if (trackName === 'sunshine-airport') setTrackMiniMap(sunShineAirport);
-    if (trackName === 'dolphin-shoals') setTrackMiniMap(dolphinShoals);
-    if (trackName === 'electrodrome') setTrackMiniMap(electrodome);
-    if (trackName === 'mount-wario') setTrackMiniMap(mountWario);
-    if (trackName === 'cloudtop-cruise') setTrackMiniMap(cloudTopCruise);
-    if (trackName === 'bone-dry-dunes') setTrackMiniMap(boneDryDunes);
-    if (trackName === 'bowsers-castle') setTrackMiniMap(bowsersCastle);
-    if (trackName === 'rainbow-road') setTrackMiniMap(rainbowRoad);
-    if (trackName === 'Wii-moo-moo-meadows') setTrackMiniMap(mooMooMeadows);
-    if (trackName === 'GBA-mario-circuit') setTrackMiniMap(marioCircuitGBA);
-    if (trackName === 'DS-cheep-cheep-beach') setTrackMiniMap(cheepCheepBeach);
-    if (trackName === 'N64-toads-turnpike') setTrackMiniMap(toadsTurnpike);
-    if (trackName === 'GCN-dry-dry-desert') setTrackMiniMap(dryDryDesert);
-    if (trackName === 'SNES-donut-plains-3') setTrackMiniMap(donutPlains3);
-    if (trackName === 'N64-royal-raceway') setTrackMiniMap(royalRaceway);
-    if (trackName === '3DS-dk-jungle') setTrackMiniMap(dkJungle);
-    if (trackName === 'DS-wario-stadium') setTrackMiniMap(warioStadium);
-    if (trackName === 'GCN-sherbet-land') setTrackMiniMap(sherbetLand);
-    if (trackName === '3DS-music-park') setTrackMiniMap(musicPark);
-    if (trackName === 'N64-yoshi-valley') setTrackMiniMap(yoshiValley);
-    if (trackName === 'DS-tick-tock-clock') setTrackMiniMap(tickTockClock);
-    if (trackName === '3DS-piranha-plant-slide')
+      setTrackWR('1:34.359');
+    }
+    if (trackName === 'water-park') {
+      setTrackMiniMap(waterPark);
+      setTrackWR('1:39.501');
+    }
+    if (trackName === 'sweet-sweet-canyon') {
+      setTrackMiniMap(sweetSweetCanyon);
+      setTrackWR('1:48.455');
+    }
+    if (trackName === 'thwomp-ruins') {
+      setTrackMiniMap(thwompRuins);
+      setTrackWR('1:48.307');
+    }
+    if (trackName === 'mario-circuit') {
+      setTrackMiniMap(marioCircuit);
+      setTrackWR('1:45.034');
+    }
+    if (trackName === 'toad-harbor') {
+      setTrackMiniMap(toadHarbor);
+      setTrackWR('2:01.794');
+    }
+    if (trackName === 'twisted-mansion') {
+      setTrackMiniMap(twistedMansion);
+      setTrackWR('1:53.499');
+    }
+    if (trackName === 'shy-guy-falls') {
+      setTrackMiniMap(shyGuyFalls);
+      setTrackWR('1:55.742');
+    }
+    if (trackName === 'sunshine-airport') {
+      setTrackMiniMap(sunShineAirport);
+      setTrackWR('1:57.399');
+    }
+    if (trackName === 'dolphin-shoals') {
+      setTrackMiniMap(dolphinShoals);
+      setTrackWR('1:52.798');
+    }
+    if (trackName === 'electrodrome') {
+      setTrackMiniMap(electrodome);
+      setTrackWR('1:55.581');
+    }
+    if (trackName === 'mount-wario') {
+      setTrackMiniMap(mountWario);
+      setTrackWR('1:41.838');
+    }
+    if (trackName === 'cloudtop-cruise') {
+      setTrackMiniMap(cloudTopCruise);
+      setTrackWR('1:59.551');
+    }
+    if (trackName === 'bone-dry-dunes') {
+      setTrackMiniMap(boneDryDunes);
+      setTrackWR('1:46.849');
+    }
+    if (trackName === 'bowsers-castle') {
+      setTrackMiniMap(bowsersCastle);
+      setTrackWR('1:57.655');
+    }
+    if (trackName === 'rainbow-road') {
+      setTrackMiniMap(rainbowRoad);
+      setTrackWR('1:58.454');
+    }
+    if (trackName === 'Wii-moo-moo-meadows') {
+      setTrackMiniMap(mooMooMeadows);
+      setTrackWR('1:23.981');
+    }
+    if (trackName === 'GBA-mario-circuit') {
+      setTrackMiniMap(marioCircuitGBA);
+      setTrackWR('1:23.414');
+    }
+    if (trackName === 'DS-cheep-cheep-beach') {
+      setTrackMiniMap(cheepCheepBeach);
+      setTrackWR('1:46.556');
+    }
+    if (trackName === 'N64-toads-turnpike') {
+      setTrackMiniMap(toadsTurnpike);
+      setTrackWR('1:45.845');
+    }
+    if (trackName === 'GCN-dry-dry-desert') {
+      setTrackMiniMap(dryDryDesert);
+      setTrackWR('1:52.887');
+    }
+    if (trackName === 'SNES-donut-plains-3') {
+      setTrackMiniMap(donutPlains3);
+      setTrackWR('1:12.833');
+    }
+    if (trackName === 'N64-royal-raceway') {
+      setTrackMiniMap(royalRaceway);
+      setTrackWR('1:55.277');
+    }
+    if (trackName === '3DS-dk-jungle') {
+      setTrackMiniMap(dkJungle);
+      setTrackWR('2:00.994');
+    }
+    if (trackName === 'DS-wario-stadium') {
+      setTrackMiniMap(warioStadium);
+      setTrackWR('1:50.614');
+    }
+    if (trackName === 'GCN-sherbet-land') {
+      setTrackMiniMap(sherbetLand);
+      setTrackWR('1:46.625');
+    }
+    if (trackName === '3DS-music-park') {
+      setTrackMiniMap(musicPark);
+      setTrackWR('1:50.614');
+    }
+    if (trackName === 'N64-yoshi-valley') {
+      setTrackMiniMap(yoshiValley);
+      setTrackWR('1:57.908');
+    }
+    if (trackName === 'DS-tick-tock-clock') {
+      setTrackMiniMap(tickTockClock);
+      setTrackWR('1:41.679');
+    }
+    if (trackName === '3DS-piranha-plant-slide') {
       setTrackMiniMap(piranhaPlantSlide);
-    if (trackName === 'Wii-grumble-volcano') setTrackMiniMap(grumbleVolcano);
-    if (trackName === 'N64-rainbow-road') setTrackMiniMap(rainbowRoadN64);
-    if (trackName === 'GCN-yoshis-circuit') setTrackMiniMap(yoshiCircuit);
-    if (trackName === 'excitebike-arena') setTrackMiniMap(exciteikeArena);
-    if (trackName === 'dragon-driftway') setTrackMiniMap(dragonDriftway);
-    if (trackName === 'mute-city') setTrackMiniMap(muteCity);
-    if (trackName === 'Wii-warios-gold-mine') setTrackMiniMap(wariosGoldmine);
-    if (trackName === 'SNES-rainbow-road') setTrackMiniMap(rainbowRoadSNES);
-    if (trackName === 'ice-ice-outpost') setTrackMiniMap(iceIceOutpost);
-    if (trackName === 'hyrule-circuit') setTrackMiniMap(hyruleCircuit);
-    if (trackName === 'GCN-baby-park') setTrackMiniMap(babyPark);
-    if (trackName === 'GBA-cheese-land') setTrackMiniMap(cheeseLand);
-    if (trackName === 'wild-woods') setTrackMiniMap(wildWoods);
-    if (trackName === 'animal-crossing') setTrackMiniMap(animalCrossing);
-    if (trackName === '3DS-neo-bowser-city') setTrackMiniMap(neoBowserCity);
-    if (trackName === 'GBA-ribbon-road') setTrackMiniMap(ribbonRoad);
-    if (trackName === 'super-bell-subway') setTrackMiniMap(superBellSubway);
-    if (trackName === 'big-blue') setTrackMiniMap(bigBlue);
+      setTrackWR('1:58.313');
+    }
+    if (trackName === 'Wii-grumble-volcano') {
+      setTrackMiniMap(grumbleVolcano);
+      setTrackWR('1:52.643');
+    }
+    if (trackName === 'N64-rainbow-road') {
+      setTrackMiniMap(rainbowRoadN64);
+      setTrackWR('1:19.406');
+    }
+    if (trackName === 'GCN-yoshis-circuit') {
+      setTrackMiniMap(yoshiCircuit);
+      setTrackWR('1:41:614');
+    }
+    if (trackName === 'excitebike-arena') {
+      setTrackMiniMap(exciteikeArena);
+      setTrackWR('1:39.305');
+    }
+    if (trackName === 'dragon-driftway') {
+      setTrackMiniMap(dragonDriftway);
+      setTrackWR('1:40.175');
+    }
+    if (trackName === 'mute-city') {
+      setTrackMiniMap(muteCity);
+      setTrackWR('1:51.112');
+    }
+    if (trackName === 'Wii-warios-gold-mine') {
+      setTrackMiniMap(wariosGoldmine);
+      setTrackWR('2:01.951');
+    }
+    if (trackName === 'SNES-rainbow-road') {
+      setTrackMiniMap(rainbowRoadSNES);
+      setTrackWR('1:25.878');
+    }
+    if (trackName === 'ice-ice-outpost') {
+      setTrackMiniMap(iceIceOutpost);
+      setTrackWR('1"44.738');
+    }
+    if (trackName === 'hyrule-circuit') {
+      setTrackMiniMap(hyruleCircuit);
+      setTrackWR('1:47.069');
+    }
+    if (trackName === 'GCN-baby-park') {
+      setTrackMiniMap(babyPark);
+      setTrackWR('1:01.934');
+    }
+    if (trackName === 'GBA-cheese-land') {
+      setTrackMiniMap(cheeseLand);
+      setTrackWR('1:41.757');
+    }
+    if (trackName === 'wild-woods') {
+      setTrackMiniMap(wildWoods);
+      setTrackWR('1:45.757');
+    }
+    if (trackName === 'animal-crossing') {
+      setTrackMiniMap(animalCrossing);
+      setTrackWR('1:35.976');
+    }
+    if (trackName === '3DS-neo-bowser-city') {
+      setTrackMiniMap(neoBowserCity);
+      setTrackWR('1:42.384');
+    }
+    if (trackName === 'GBA-ribbon-road') {
+      setTrackMiniMap(ribbonRoad);
+      setTrackWR('1:44.300');
+    }
+    if (trackName === 'super-bell-subway') {
+      setTrackMiniMap(superBellSubway);
+      setTrackWR('1:40.002');
+    }
+    if (trackName === 'big-blue') {
+      setTrackMiniMap(bigBlue);
+      setTrackWR('1:23.455');
+    }
   }, [location.state]);
 
   return (
@@ -205,7 +348,9 @@ export default function TrackSummary() {
         />
       </Link>
 
-      <h1 className='track-name-header'>{trackDisplayName}</h1>
+      <h1 className='track-name-header'>
+        {trackDisplayName} - {trackWR}
+      </h1>
       <div className='track-summary'>
         {timeTiles}
         <img

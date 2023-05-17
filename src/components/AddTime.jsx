@@ -4,7 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 // Firebase
 import { auth, db } from '../firebase.js';
-import { doc, setDoc, onSnapshot } from 'firebase/firestore';
+import {
+  doc,
+  setDoc,
+  onSnapshot,
+  getDocs,
+  collection,
+} from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 
 // Styles
@@ -180,62 +186,249 @@ export default function AddTime() {
   };
 
   // Adding a time
+
+  // Get the track's displayName
+  const [trackDisplayName, setTrackDisplayName] = useState('');
+  const [isTrackDisplayNameSet, setIsTrackDisplayNameSet] = useState(false);
   useEffect(() => {
     const addTimeForm = document.querySelector('.add-time-form');
+    console.log('first UE');
     if (addTimeForm) {
-      addTimeForm.addEventListener('submit', (e) => {
+      console.log('addTimeForm true');
+      const handleSubmit = (e) => {
+        console.log('handled submit');
         e.preventDefault();
 
-        if (
-          authUser.uid &&
-          addTimeForm.track.value &&
-          addTimeForm.character.value &&
-          addTimeForm.minutes.value &&
-          addTimeForm.seconds.value &&
-          addTimeForm.milliseconds.value &&
-          user.displayName
-        ) {
-          // Get reference to add the time to the user
-          const userTimeCollectionUrl = 'users/' + authUser.uid + '/times';
-          const userTimeRef = doc(
-            db,
-            userTimeCollectionUrl,
-            addTimeForm.track.value
-          );
-
-          // Get reference to add the time to the track
-          const trackTimeCollectionUrl =
-            'tracks/' + addTimeForm.track.value + '/times';
-          const trackTimeRef = doc(db, trackTimeCollectionUrl, authUser.uid);
-
-          const time =
-            addTimeForm.minutes.value +
-            ':' +
-            addTimeForm.seconds.value +
-            '.' +
-            addTimeForm.milliseconds.value;
-
-          setDoc(userTimeRef, {
-            character: addTimeForm.character.value,
-            time: time,
-          }).then(() => {
-            setDoc(trackTimeRef, {
-              character: addTimeForm.character.value,
-              time: time,
-              recordHolder: user.displayName,
-            }).then(() => {
-              addTimeForm.reset();
-              toTrackPage(addTimeForm.track.value);
-            });
-          });
-        } else {
-          console.log('undefined');
+        if (addTimeForm.track.value === 'mario-kart-stadium') {
+          setTrackDisplayName('MK8 Mario Kart Stadium');
         }
-      });
-    } else {
-      console.log('undefined');
+        if (addTimeForm.track.value === 'water-park') {
+          setTrackDisplayName('Water Park');
+        }
+        if (addTimeForm.track.value === 'sweet-sweet-canyon') {
+          setTrackDisplayName('Sweet Sweet Canyon');
+        }
+        if (addTimeForm.track.value === 'thwomp-ruins') {
+          setTrackDisplayName('Thwomp Ruins');
+        }
+        if (addTimeForm.track.value === 'mario-circuit') {
+          setTrackDisplayName('Mario Circuit');
+        }
+        if (addTimeForm.track.value === 'toad-harbor') {
+          setTrackDisplayName('Toad Harbor');
+        }
+        if (addTimeForm.track.value === 'twisted-mansion') {
+          setTrackDisplayName('Twisted Mansion');
+        }
+        if (addTimeForm.track.value === 'shy-guy-falls') {
+          setTrackDisplayName('Shy Guy Falls');
+        }
+        if (addTimeForm.track.value === 'sunshine-airport') {
+          setTrackDisplayName('Sunshine Airport');
+        }
+        if (addTimeForm.track.value === 'dolphin-shoals') {
+          setTrackDisplayName('Dolphin Shoals');
+        }
+        if (addTimeForm.track.value === 'electrodrome') {
+          setTrackDisplayName('Electrodome');
+        }
+        if (addTimeForm.track.value === 'mount-wario') {
+          setTrackDisplayName('Mount Wario');
+        }
+        if (addTimeForm.track.value === 'cloudtop-cruise') {
+          setTrackDisplayName('Cloud Top Cruise');
+        }
+        if (addTimeForm.track.value === 'bone-dry-dunes') {
+          setTrackDisplayName('Bone Dry Dunes');
+        }
+        if (addTimeForm.track.value === 'bowsers-castle') {
+          setTrackDisplayName("Bowser's Castle");
+        }
+        if (addTimeForm.track.value === 'rainbow-road') {
+          setTrackDisplayName('Rainbow Road');
+        }
+        if (addTimeForm.track.value === 'Wii-moo-moo-meadows') {
+          setTrackDisplayName('Moo Moo Meadows');
+        }
+        if (addTimeForm.track.value === 'GBA-mario-circuit') {
+          setTrackDisplayName('GBA Mario Circuit');
+        }
+        if (addTimeForm.track.value === 'DS-cheep-cheep-beach') {
+          setTrackDisplayName('Cheep Cheep Beach');
+        }
+        if (addTimeForm.track.value === 'N64-toads-turnpike') {
+          setTrackDisplayName("Toad's Turnpike");
+        }
+        if (addTimeForm.track.value === 'GCN-dry-dry-desert') {
+          setTrackDisplayName('Dry Dry Desert');
+        }
+        if (addTimeForm.track.value === 'SNES-donut-plains-3') {
+          setTrackDisplayName('Donut Plains 3');
+        }
+        if (addTimeForm.track.value === 'N64-royal-raceway') {
+          setTrackDisplayName('Royal Raceway');
+        }
+        if (addTimeForm.track.value === '3DS-dk-jungle') {
+          setTrackDisplayName('DK Jungle');
+        }
+        if (addTimeForm.track.value === 'DS-wario-stadium') {
+          setTrackDisplayName('Wario Stadium');
+        }
+        if (addTimeForm.track.value === 'GCN-sherbet-land') {
+          setTrackDisplayName('Sherbet Land');
+        }
+        if (addTimeForm.track.value === '3DS-music-park') {
+          setTrackDisplayName('Music Park');
+        }
+        if (addTimeForm.track.value === 'N64-yoshi-valley') {
+          setTrackDisplayName('Yoshi Valley');
+        }
+        if (addTimeForm.track.value === 'DS-tick-tock-clock') {
+          setTrackDisplayName('Tick Tock Clock');
+        }
+        if (addTimeForm.track.value === '3DS-piranha-plant-slide') {
+          setTrackDisplayName('Piranha Plant Slide');
+        }
+        if (addTimeForm.track.value === 'Wii-grumble-volcano') {
+          setTrackDisplayName('Grumble Volcano');
+        }
+        if (addTimeForm.track.value === 'N64-rainbow-road') {
+          setTrackDisplayName('N64 Rainbow Road');
+        }
+        if (addTimeForm.track.value === 'GCN-yoshis-circuit') {
+          setTrackDisplayName('Yoshi Circuit');
+        }
+        if (addTimeForm.track.value === 'excitebike-arena') {
+          setTrackDisplayName('Excitebike Arena');
+        }
+        if (addTimeForm.track.value === 'dragon-driftway') {
+          setTrackDisplayName('Dragon Driftway');
+        }
+        if (addTimeForm.track.value === 'mute-city') {
+          setTrackDisplayName('Mute City');
+        }
+        if (addTimeForm.track.value === 'Wii-warios-gold-mine') {
+          setTrackDisplayName("Wario's Goldmine");
+        }
+        if (addTimeForm.track.value === 'SNES-rainbow-road') {
+          setTrackDisplayName('SNESN Rainbow Road');
+        }
+        if (addTimeForm.track.value === 'ice-ice-outpost') {
+          setTrackDisplayName('Ice Ice Outpost');
+        }
+        if (addTimeForm.track.value === 'hyrule-circuit') {
+          setTrackDisplayName('Hyrule Circuit');
+        }
+        if (addTimeForm.track.value === 'GCN-baby-park') {
+          setTrackDisplayName('Baby Park');
+        }
+        if (addTimeForm.track.value === 'GBA-cheese-land') {
+          setTrackDisplayName('Cheese Land');
+        }
+        if (addTimeForm.track.value === 'wild-woods') {
+          setTrackDisplayName('Wild Woods');
+        }
+        if (addTimeForm.track.value === 'animal-crossing') {
+          setTrackDisplayName('Animal Crossing');
+        }
+        if (addTimeForm.track.value === '3DS-neo-bowser-city') {
+          setTrackDisplayName('Neo Bowser City');
+        }
+        if (addTimeForm.track.value === 'GBA-ribbon-road') {
+          setTrackDisplayName('Ribbon Road');
+        }
+        if (addTimeForm.track.value === 'super-bell-subway') {
+          setTrackDisplayName('Super Bell Subway');
+        }
+        if (addTimeForm.track.value === 'big-blue') {
+          setTrackDisplayName('Big Blue');
+        }
+
+        setIsTrackDisplayNameSet(true);
+      };
+
+      addTimeForm.addEventListener('submit', handleSubmit);
+
+      return () => {
+        // Cleanup: Remove the event listener when the component unmounts
+        addTimeForm.removeEventListener('submit', handleSubmit);
+      };
     }
   });
+
+  useEffect(() => {
+    const addTimeForm = document.querySelector('.add-time-form');
+
+    console.log('Second UE');
+    console.log(isTrackDisplayNameSet + ' second UE');
+    if (isTrackDisplayNameSet) {
+      console.log('trackDisplayNameSet true');
+      // Get reference to add the time to the user
+      const userTimeCollectionUrl = 'users/' + authUser.uid + '/times';
+      const userTimeRef = doc(
+        db,
+        userTimeCollectionUrl,
+        addTimeForm.track.value
+      );
+
+      // Get reference to add the time to the track
+      const trackTimeCollectionUrl =
+        'tracks/' + addTimeForm.track.value + '/times';
+      const trackTimeRef = doc(db, trackTimeCollectionUrl, authUser.uid);
+
+      const time =
+        addTimeForm.minutes.value +
+        ':' +
+        addTimeForm.seconds.value +
+        '.' +
+        addTimeForm.milliseconds.value;
+
+      const dateOfRecord = new Date();
+
+      // Check if the new time is the fastest
+      const checkFastestTime = async () => {
+        const trackTimesSnapshot = await getDocs(
+          collection(db, trackTimeCollectionUrl)
+        );
+        let isFastestTime = true;
+
+        trackTimesSnapshot.forEach((doc) => {
+          const docTime = doc.data().time;
+
+          // Compare the new time with each existing time
+          if (docTime < time) {
+            isFastestTime = false;
+          }
+        });
+
+        // Update the user's time and the track's time
+        console.log('!!!');
+        setDoc(userTimeRef, {
+          character: addTimeForm.character.value,
+          time: time,
+          date: dateOfRecord,
+          track: trackDisplayName,
+          newRecord: isFastestTime,
+        }).then(() => {
+          setDoc(trackTimeRef, {
+            character: addTimeForm.character.value,
+            time: time,
+            recordHolder: user.displayName,
+            date: dateOfRecord,
+            track: trackDisplayName,
+            newRecord: isFastestTime,
+          }).then(() => {
+            addTimeForm.reset();
+            toTrackPage(addTimeForm.track.value);
+          });
+        });
+      };
+
+      checkFastestTime();
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isTrackDisplayNameSet]);
 
   return (
     <div className='add-time'>

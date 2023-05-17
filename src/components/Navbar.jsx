@@ -39,6 +39,17 @@ export default function Navbar() {
         </li>
         <li className='nav-item'>
           <Link
+            to='history'
+            spy={true}
+            smooth={true}
+            offset={200}
+            duration={500}
+          >
+            HISTORY
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link
             to='tracks'
             spy={true}
             smooth={true}
