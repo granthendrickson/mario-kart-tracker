@@ -13,7 +13,7 @@ import '../styles/records.css';
 // Images
 import banner from '../images/scrolling-banner-sample-1.png';
 import yoshiHero from '../images/char-yoshi.webp';
-import kingBooIcon from '../images/kingBoo_th.png';
+import whiteYoshiHero from '../images/whiteYoshi_th.webp';
 import rosalinaIcon from '../images/rosalina_th.png';
 import linkIcon from '../images/link_th.png';
 import yoshiIcon from '../images/yoshi_th.webp';
@@ -125,7 +125,7 @@ export default function Records() {
           type={'Tracks'}
           icon={
             secondPlaceName === 'Henny'
-              ? kingBooIcon
+              ? whiteYoshiHero
               : secondPlaceName === 'Sepe'
               ? rosalinaIcon
               : secondPlaceName === 'Reppo'
@@ -142,7 +142,7 @@ export default function Records() {
           type={'Tracks'}
           icon={
             firstPlaceName === 'Henny'
-              ? kingBooIcon
+              ? whiteYoshiHero
               : firstPlaceName === 'Sepe'
               ? rosalinaIcon
               : firstPlaceName === 'Reppo'
@@ -159,7 +159,7 @@ export default function Records() {
           type={'Tracks'}
           icon={
             thirdPlaceName === 'Henny'
-              ? kingBooIcon
+              ? whiteYoshiHero
               : thirdPlaceName === 'Sepe'
               ? rosalinaIcon
               : thirdPlaceName === 'Reppo'

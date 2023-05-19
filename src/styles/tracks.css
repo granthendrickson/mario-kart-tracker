@@ -64,6 +64,11 @@
   cursor: pointer;
 }
 
+.time-tile-icon {
+  width: 5%;
+  position: absolute;
+}
+
 .track-summary-page {
   background-image: url('../images/lightTiles.png');
   background-repeat: repeat;

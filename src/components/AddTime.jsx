@@ -192,11 +192,9 @@ export default function AddTime() {
   const [isTrackDisplayNameSet, setIsTrackDisplayNameSet] = useState(false);
   useEffect(() => {
     const addTimeForm = document.querySelector('.add-time-form');
-    console.log('first UE');
+
     if (addTimeForm) {
-      console.log('addTimeForm true');
       const handleSubmit = (e) => {
-        console.log('handled submit');
         e.preventDefault();
 
         if (addTimeForm.track.value === 'mario-kart-stadium') {
@@ -359,10 +357,7 @@ export default function AddTime() {
   useEffect(() => {
     const addTimeForm = document.querySelector('.add-time-form');
 
-    console.log('Second UE');
-    console.log(isTrackDisplayNameSet + ' second UE');
     if (isTrackDisplayNameSet) {
-      console.log('trackDisplayNameSet true');
       // Get reference to add the time to the user
       const userTimeCollectionUrl = 'users/' + authUser.uid + '/times';
       const userTimeRef = doc(
@@ -402,7 +397,6 @@ export default function AddTime() {
         });
 
         // Update the user's time and the track's time
-        console.log('!!!');
         setDoc(userTimeRef, {
           character: addTimeForm.character.value,
           time: time,
