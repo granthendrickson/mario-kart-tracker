@@ -94,7 +94,93 @@ import ribbonRoad from '../images/track-images/bell-cup/MK8_GBA_Ribbon_Road_Cour
 import superBellSubway from '../images/track-images/bell-cup/MK8_Super_Bell_Subway_Course_Icon.webp';
 import bigBlue from '../images/track-images/bell-cup/MK8_Big_Blue_Course_Icon.webp';
 
+// Golden Dash Cup
+import goldenDashCupIcon from '../images/cup-icons/MK8D_BCP_Golden_Dash_Emblem.webp';
+import parisPromenade from '../images/track-images/golden-dash-cup/MK8D_Tour_Paris_Promenade_Course_Icon.png';
+import toadCircuit from '../images/track-images/golden-dash-cup/MK8D_3DS_Toad_Circuit_Course_Icon.webp';
+import chocoMountain from '../images/track-images/golden-dash-cup/MK8D_N64_Choco_Mountain_Course_Icon.png';
+import coconutMall from '../images/track-images/golden-dash-cup/MK8D_Wii_Coconut_Mall_Course_Icon.png';
+
+// Lucky Cat Cup
+import luckyCatCupIcon from '../images/cup-icons/MK8D_BCP_Lucky_Cat_Emblem.webp';
+import tokyoBlur from '../images/track-images/lucky-cat-cup/MK8D_Tour_Tokyo_Blur_Course_Icon.png';
+import shroomRidge from '../images/track-images/lucky-cat-cup/MK8D_DS_Shroom_Ridge_Course_Icon.webp';
+import skyGarden from '../images/track-images/lucky-cat-cup/MK8D_GBA_Sky_Garden_Course_Icon.webp';
+import ninjaHideaway from '../images/track-images/lucky-cat-cup/MK8D_Ninja_Hideaway_Course_Icon.png';
+
+// Turnip Cup
+import turnipCupIcon from '../images/cup-icons/MK8D_BCP_Turnip_Emblem.webp';
+import newYorkMinute from '../images/track-images/turnip-cup/MK8D_Tour_New_York_Minute_Course_Icon.png';
+import marioCircuit3 from '../images/track-images/turnip-cup/MK8D_SNES_Mario_Circuit_3_Course_Icon.webp';
+import kalamariDesert from '../images/track-images/turnip-cup/MK8D_N64_Kalimari_Desert_Course_Icon.webp';
+import waluigiPinball from '../images/track-images/turnip-cup/MK8D_DS_Waluigi_Pinball_Course_Icon.webp';
+
+// Propeller Cup
+import propellerCupIcon from '../images/cup-icons/MK8D_BCP_Propeller_Emblem.webp';
+import sydneySprint from '../images/track-images/propeller-cup/MK8D_Tour_Sydney_Sprint_Course_Icon.png';
+import snowLand from '../images/track-images/propeller-cup/MK8D_GBA_Snow_Land_Course_Icon.png';
+import mushroomGorge from '../images/track-images/propeller-cup/MK8D_Wii_Mushroom_Gorge_Course_Icon.webp';
+import skyHighSundae from '../images/track-images/propeller-cup/MK8D_Sky-High_Sundae_Course_Icon.webp';
+
+// Rock Cup
+import rockCupIcon from '../images/cup-icons/MK8D_BCP_Rock_Emblem.webp';
+import londonLoop from '../images/track-images/rock-cup/MK8D_Tour_London_Loop_Course_Icon.png';
+import booLake from '../images/track-images/rock-cup/MK8D_GBA_Boo_Lake_Course_Icon.png';
+import rockRockMountain from '../images/track-images/rock-cup/MK8D_3DS_Rock_Rock_Mountain_Course_Icon.png';
+import mapleTreeway from '../images/track-images/rock-cup/MK8D_Wii_Maple_Treeway_Course_Icon.webp';
+
+// Moon Cup
+import moonCupIcon from '../images/cup-icons/MK8D_BCP_Moon_Emblem.webp';
+import berlinByways from '../images/track-images/moon-cup/MK8D_Tour_Berlin_Byways_Course_Icon.png';
+import peachGarden from '../images/track-images/moon-cup/MK8D_DS_Peach_Gardens_Course_Icon.webp';
+import merryMountain from '../images/track-images/moon-cup/MK8D_Merry_Mountain_Course_Icon.webp';
+import rainbowRoad3DS from '../images/track-images/moon-cup/MK8D_3DS_Rainbow_Road_Course_Icon.png';
+
+// Fruit Cup
+import fruitCupIcon from '../images/cup-icons/MK8D_BCP_Fruit_Emblem.webp';
+import amsterdamDrift from '../images/track-images/fruit-cup/MK8D_Tour_Amsterdam_Drift_Course_Icon.webp';
+import riversidePark from '../images/track-images/fruit-cup/MK8D_Tour_Amsterdam_Drift_Course_Icon.webp';
+import dkSummit from '../images/track-images/fruit-cup/MK8D_Wii_DK_Summit_Course_Icon.webp';
+import yoshisIsland from "../images/track-images/fruit-cup/MK8D_Yoshi's_Island_Course_Icon.webp";
+
+// Boomerang Cup
+import boomerangCupIcon from '../images/cup-icons/MK8D_BCP_Boomerang_Emblem.webp';
+import bangkokRush from '../images/track-images/boomerang-cup/MK8D_Tour_Bangkok_Rush_Course_Icon.webp';
+import marioCircuitDS from '../images/track-images/boomerang-cup/MK8D_DS_Mario_Circuit_Course_Icon.png';
+import waluigiStadium from '../images/track-images/boomerang-cup/MK8D_GCN_Waluigi_Stadium_Course_Icon.webp';
+import singaporeSpeedway from '../images/track-images/boomerang-cup/MK8D_Tour_Singapore_Speedway_Course_Icon.png';
+
 export default function Tracks() {
+  const toggleBase = () => {
+    var base = document.getElementById('base');
+    var dlc = document.getElementById('dlc');
+    var btn = document.getElementById('btn');
+
+    var toggleBase = document.getElementById('toggle-base');
+    var toggleDlc = document.getElementById('toggle-dlc');
+
+    base.style.left = '0px';
+    dlc.style.left = '-3000px';
+    btn.style.left = '0px';
+    toggleBase.style.color = 'white';
+    toggleDlc.style.color = 'black';
+  };
+
+  const toggleDlc = () => {
+    var base = document.getElementById('base');
+    var dlc = document.getElementById('dlc');
+    var btn = document.getElementById('btn');
+
+    var toggleBase = document.getElementById('toggle-base');
+    var toggleDlc = document.getElementById('toggle-dlc');
+
+    base.style.left = '-3000px';
+    dlc.style.left = '0px';
+    btn.style.left = '50%';
+    toggleBase.style.color = 'black';
+    toggleDlc.style.color = 'white';
+  };
+
   return (
     <div className='tracks'>
       <div className='divider-down'>
@@ -111,8 +197,31 @@ export default function Tracks() {
           />
         </div>
       </div>
-      <div className='section-header'>Tracks</div>
-      <div className='all-tracks-container'>
+      <div className='tracks-header'>
+        <div className='section-header'>Tracks</div>
+        <div className='button-box'>
+          <div id='btn'></div>
+          <button
+            id='toggle-base'
+            className='toggle-btn'
+            onClick={toggleBase}
+          >
+            Base
+          </button>
+          <button
+            id='toggle-dlc'
+            className='toggle-btn'
+            onClick={toggleDlc}
+          >
+            DLC
+          </button>
+        </div>
+      </div>
+
+      <div
+        className='base-tracks-container'
+        id='base'
+      >
         <Cup
           cupPic={mushroomCupIcon}
           cupName={'Mushroom Cup'}
@@ -256,6 +365,107 @@ export default function Tracks() {
           track2Name={'GBA-ribbon-road'}
           track3Name={'super-bell-subway'}
           track4Name={'big-blue'}
+        />
+      </div>
+      <div
+        className='dlc-tracks-container'
+        id='dlc'
+      >
+        <Cup
+          cupPic={goldenDashCupIcon}
+          cupName={'Golden Dash Cup'}
+          track1Pic={parisPromenade}
+          track2Pic={toadCircuit}
+          track3Pic={chocoMountain}
+          track4Pic={coconutMall}
+          track1Name={'paris-promenade'}
+          track2Name={'toad-circuit'}
+          track3Name={'choco-mountain'}
+          track4Name={'coconut-mall'}
+        />
+        <Cup
+          cupPic={luckyCatCupIcon}
+          cupName={'Lucky Cat Cup'}
+          track1Pic={tokyoBlur}
+          track2Pic={shroomRidge}
+          track3Pic={skyGarden}
+          track4Pic={ninjaHideaway}
+          track1Name={'tokyo-blur'}
+          track2Name={'shroom-ridge'}
+          track3Name={'sky-garden'}
+          track4Name={'ninja-hideaway'}
+        />
+        <Cup
+          cupPic={turnipCupIcon}
+          cupName={'Turnip Cup'}
+          track1Pic={newYorkMinute}
+          track2Pic={marioCircuit3}
+          track3Pic={kalamariDesert}
+          track4Pic={waluigiPinball}
+          track1Name={'new-york-minute'}
+          track2Name={'mario-circuit-3'}
+          track3Name={'kalamri-desert'}
+          track4Name={'waluigi-pinball'}
+        />
+        <Cup
+          cupPic={propellerCupIcon}
+          cupName={'Propeller Cup'}
+          track1Pic={sydneySprint}
+          track2Pic={snowLand}
+          track3Pic={mushroomGorge}
+          track4Pic={skyHighSundae}
+          track1Name={'sydney-sprint'}
+          track2Name={'snow-land'}
+          track3Name={'mushroom-gorge'}
+          track4Name={'sky-high-sundae'}
+        />
+        <Cup
+          cupPic={rockCupIcon}
+          cupName={'Rock Cup'}
+          track1Pic={londonLoop}
+          track2Pic={booLake}
+          track3Pic={rockRockMountain}
+          track4Pic={mapleTreeway}
+          track1Name={'london-loop'}
+          track2Name={'boo-lake'}
+          track3Name={'rock-rock-mountain'}
+          track4Name={'maple-treeway'}
+        />
+        <Cup
+          cupPic={moonCupIcon}
+          cupName={'Moon Cup'}
+          track1Pic={berlinByways}
+          track2Pic={peachGarden}
+          track3Pic={merryMountain}
+          track4Pic={rainbowRoad3DS}
+          track1Name={'berlin-byways'}
+          track2Name={'peach-garden'}
+          track3Name={'merry-mountain'}
+          track4Name={'3DS-rainbow-road'}
+        />
+        <Cup
+          cupPic={fruitCupIcon}
+          cupName={'Fruit Cup'}
+          track1Pic={amsterdamDrift}
+          track2Pic={riversidePark}
+          track3Pic={dkSummit}
+          track4Pic={yoshisIsland}
+          track1Name={'amsterdam-drift'}
+          track2Name={'riverside-park'}
+          track3Name={'dk-summit'}
+          track4Name={'yoshis-island'}
+        />
+        <Cup
+          cupPic={boomerangCupIcon}
+          cupName={'Boomerang Cup'}
+          track1Pic={bangkokRush}
+          track2Pic={marioCircuitDS}
+          track3Pic={waluigiStadium}
+          track4Pic={singaporeSpeedway}
+          track1Name={'bangkok-rush'}
+          track2Name={'DS-mario-circuit'}
+          track3Name={'waluigi-stadium'}
+          track4Name={'singapore-speedway'}
         />
       </div>
     </div>

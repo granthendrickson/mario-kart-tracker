@@ -2,7 +2,7 @@
   background-image: url('../images/lightTiles.png');
   background-repeat: repeat;
 
-  height: 3600px;
+  height: 3800px;
   position: relative;
 }
 
@@ -33,8 +33,71 @@
   padding-top: 420px;
 }
 
-.all-tracks-container {
+.button-box {
+  background-color: white;
+  position: relative;
+  margin: 20px auto;
+  width: 300px;
+  box-shadow: 0 0 20px 10px #2e2e2e1f;
+  border-radius: 30px;
+}
+
+button {
+  border: none;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#btn {
+  background-color: #E60012;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50%;
+  height: 100%;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.toggle-btn {
+  position: relative;
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+
+  font: 'Roboto';
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#toggle-base {
+  left: -12px;
+  color: white;
+}
+
+#toggle-dlc {
+  color: black;
+}
+
+.base-tracks-container {
+  position: absolute;
+  left: 0px;
   margin: 40px 10%;
+
+  transition: .5s;
+}
+
+.dlc-tracks-container {
+  position: absolute;
+  margin: 40px 10%;
+  left: -3000px;
+
+  transition: .5s;
 }
 
 .cup {
